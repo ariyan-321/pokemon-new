@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client";
 import Card from "./Card/Card";
+import { GET_ALL_POKEMONS } from "../../Apollo/queries";
 
 interface Pokemon {
   id: number;
@@ -21,6 +23,19 @@ export default function Cards() {
     { id: 9, name: "Blastoise", image: "/images/img-9.png", abilities: ["Water"], mark: "#010" },
     { id: 10, name: "Caterpie", image: "/images/img-10.png", abilities: ["Bug"], mark: "#010" },
   ];
+
+  const { loading, error, data } = useQuery(GET_ALL_POKEMONS, {
+    variables: { limit: 10, offset: 0 },
+  });
+
+  if (loading) return <p>Loading Pokémon...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  const pokemonS = data;
+
+  console.log(pokemonS.pokemons.results)
+
+ 
 
   return (
     <div className="w-[90%] md:w-full mx-auto">
