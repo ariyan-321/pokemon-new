@@ -17,7 +17,7 @@ export default function Cards() {
   });
 
   // Show loading state while the data is being fetched
-  if (loading) return <p>Loading Pokémon...</p>;
+  if (loading) return <p className="text-center text-3xl my-12">Loading Pokémon...</p>
 
   // Show error if something goes wrong with the query
   if (error) return <p>Error: {error.message}</p>;

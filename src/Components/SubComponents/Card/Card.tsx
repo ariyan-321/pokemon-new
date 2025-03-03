@@ -21,7 +21,7 @@ interface CardProps {
 
 const Card = ({ pokemon }: CardProps) => {
   return (
-    <Link to={`/details/${pokemon.id}`}>
+    <Link to={`/details/${pokemon.name}`}>
     <div className="relative cursor-pointer rounded-br-[100px] bg-white rounded-lg shadow-lg p-6 w-64 min-w-[256px] transition-transform hover:scale-105">
       {/* Pokemon Image */}
       <div className="w-full h-40 bg-gray-100 rounded-xl p-4 mb-6">

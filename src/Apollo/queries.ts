@@ -47,6 +47,6 @@ export const GET_SINGLE_POKEMON_DETAILS = gql`
       }
       message
       status
-    }
-  }
+}
+}
 `;
