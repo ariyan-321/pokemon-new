@@ -8,16 +8,7 @@ export default function Details() {
   const { loading, error, data } = useQuery(GET_SINGLE_POKEMON_DETAILS, {
     variables: { name: name },
   });
-  interface Pokemon {
-    id: number;
-    name: string;
-    height: string;
-    weight: string;
-    stats: string[];
-    abilities: string[];
-    types: string[];
-  }
-
+ 
   interface Stat {
     stat: {
       name: string;  // The name of the stat (e.g., "attack", "defense")
