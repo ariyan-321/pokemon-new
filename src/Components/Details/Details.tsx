@@ -59,7 +59,9 @@ export default function Details() {
       
       <div className="lg:grid grid-cols-3 justify-items-center lg:mt-24">
       <div className="w-full max-w-xs sm:max-w-sm lg:order-2 ">
-        <img src={pokemon.image} alt={pokemon.name} className="w-full" />
+        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+                  pokemon?.id ?? 0
+                }.png`} alt={pokemon.name} className="w-full" />
       </div>
 
       <div className="w-full text-center mt-5">
