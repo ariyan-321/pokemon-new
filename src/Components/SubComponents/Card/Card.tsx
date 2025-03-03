@@ -10,14 +10,37 @@ interface Pokemon {
 interface CardProps {
   pokemon: Pokemon;
 }
-// const abilityColors: { [key: string]: string } = {
-//     Grass: "bg-[#9BCC50]",
-//     Poison: "bg-[#B97FC9]",
-//     Fire: "bg-[#FC7C23]",
-//     Flying: "bg-[#30A7D7]",
-//     Water: "bg-[#30A7D7]",
-//     Bug: "bg-[#729F3F]",
-//   };
+
+
+const allTypes = [
+    
+  "fire",
+  "water",
+  "poison",
+  "grass",
+  "ice",
+  "fighting",
+  "Poison",
+  "Ground",
+  "Flying",
+  "Psychic",
+  "Bug",
+  "Rock",
+  "Ghost",
+  "Dragon",
+  "Dark",
+  "Steel",
+  "Fairy",
+];
+
+const abilityColors: { [key: string]: string } = {
+    grass: "bg-[#9BCC50]",
+    poison: "bg-[#B97FC9]",
+    fire: "bg-[#FC7C23]",
+    flying: "bg-[#30A7D7]",
+    water: "bg-[#30A7D7]",
+    bug: "bg-[#729F3F]",
+  };
 
 const Card = ({ pokemon }: CardProps) => {
   return (
@@ -25,9 +48,9 @@ const Card = ({ pokemon }: CardProps) => {
     <div className="relative cursor-pointer rounded-br-[100px] bg-white rounded-lg shadow-lg p-6 w-64 min-w-[256px] transition-transform hover:scale-105">
       {/* Pokemon Image */}
       <div className="w-full h-40 bg-gray-100 rounded-xl p-4 mb-6">
-        {/* <span className="absolute top-4 left-4 text-gray-600 p-5 text-sm font-bold">
-          {pokemon.mark}
-        </span> */}
+        <span className="absolute top-4 left-4 text-gray-600 p-5 text-sm font-bold">
+          #010
+        </span>
 
         <img
           src={pokemon.image}
@@ -39,17 +62,20 @@ const Card = ({ pokemon }: CardProps) => {
         {pokemon.name}
       </h3>
 
-      {/* Abilities Container
+      {/* Abilities Container */}
       <div className="flex flex-wrap gap-3 justify-center ">
-        {pokemon.abilities.map((ability: string) => (
-          <span
-          key={`${pokemon.id}-${ability}`}
-          className={`rounded-lg px-[9px] text-white font-semibold py-[2px] ${abilityColors[ability] || ""}`}
-        >
-          {ability}
-        </span>
-        ))}
-      </div> */}
+      {Array.isArray(allTypes) &&
+    allTypes.slice(0, 2).map((ability: string, i: number) => (
+      <span
+        key={i}
+        className={`rounded-lg px-[9px] text-white font-semibold py-[2px] ${
+          abilityColors[ability] || "bg-gray-500"
+        }`}
+      >
+        {ability}
+      </span>
+    ))}
+      </div>
     </div></Link>
   );
 };

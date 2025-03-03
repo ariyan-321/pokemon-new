@@ -45,10 +45,32 @@ export default function Details() {
 
   console.log(pokemon);
 
+  const allTypes = [
+    
+    "fire",
+    "water",
+    "poison",
+    "grass",
+    "ice",
+    "fighting",
+    "Poison",
+    "Ground",
+    "Flying",
+    "Psychic",
+    "Bug",
+    "Rock",
+    "Ghost",
+    "Dragon",
+    "Dark",
+    "Steel",
+    "Fairy",
+  ];
+
+
   if (!pokemon) return <p>Pokémon not found!</p>;
 
   return (
-    <div>
+    <div className="mx-7">
       <div className="flex justify-center items-center my-5">
         <img
           src="/images/Logo.png"
@@ -64,11 +86,13 @@ export default function Details() {
                 }.png`} alt={pokemon.name} className="w-full" />
       </div>
 
-      <div className="w-full text-center mt-5">
+      <div className="w-full  mt-5">
         <h1 className="text-[#257BC4] font-semibold text-lg sm:text-xl lg:order-1">
           {pokemon.name} <span>#00{pokemon.id}</span>
         </h1>
-        <p className="text-sm">{pokemon.description}</p>
+        <p className="text-sm">
+        There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.
+        </p>
 
         <div className="border-[#FC7C23] border-4 rounded-lg w-full sm:w-[80%] rounded-br-[50px] grid grid-cols-2 gap-3 p-4 mt-5">
           <div>
@@ -108,6 +132,22 @@ export default function Details() {
     </span>
   ))}
 </div>
+
+
+<h1 className="font-semibold text-lg">Weaknesses</h1>
+<div className="flex flex-wrap gap-3 justify-center mt-2">
+  {allTypes.slice(0,4).map((type: string, i: number) => (
+    <span
+      key={i}
+      className={`rounded-lg px-4 text-white font-semibold py-1 ${
+        abilityColors[type] || "bg-gray-500" // Default color if not found
+      }`}
+    >
+      {type}
+    </span>
+  ))}
+</div>
+
 
         <div className="w-full max-w-sm mx-auto mt-5">
           <h2 className="text-lg font-bold">Stats</h2>
