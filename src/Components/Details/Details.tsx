@@ -70,7 +70,16 @@ export default function Details() {
   if (!pokemon) return <p>Pokémon not found!</p>;
 
   return (
-    <div className="mx-7">
+    <div className="">
+      <div className="flex justify-between">
+      <div>
+        <img className="h-[200vh] w-[140px]" src="/images/Group-14.png" alt="" />
+      </div>
+
+
+      <div className="mx-5">
+
+
       <div className="flex justify-center items-center my-5">
         <img
           src="/images/Logo.png"
@@ -172,6 +181,18 @@ export default function Details() {
     <div className="flex justify-center items-center my-12">
         <Link to={"/"} className="bg-[#FFCB05] px-7 py-2 rounded-lg text-xl my-12 text-center text-white font-semibold felx items-center gap-4"><span>🏠 Go Back To HomePage</span></Link>
       </div>
+
+
+
+      </div>
+
+      <div>
+        <img className="h-[200vh] w-[140px]" src="/images/Group-14.png" alt="" />
+      </div>
+      </div>
+
+
+     
     </div>
    
   );
