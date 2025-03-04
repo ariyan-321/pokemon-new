@@ -26,9 +26,9 @@ export default function Cards() {
   const pokemonS = data?.pokemons?.results || [];
 
   return (
-    <div className="w-[90%] md:w-full mx-auto  px-4">
+    <div className="w-full  px-4">
       {/* Carousel for mobile */}
-      <div className="carousel carousel-center rounded-box max-w-md space-x-4 p-4 md:hidden">
+      <div className="carousel w-[330px] carousel-center rounded-box max-w-md space-x-4 p-4 md:hidden">
         {pokemonS.map((pokemon: Pokemon) => (
           <div className="carousel-item" key={pokemon.id}>
             <Card pokemon={pokemon} />
@@ -37,7 +37,7 @@ export default function Cards() {
       </div>
 
       {/* Grid for larger screens */}
-      <div className="grid grid-cols-3 lg:grid-cols-5 gap-12 hidden md:grid">
+      <div className="grid  grid-cols-3 lg:grid-cols-5 gap-12 hidden md:grid">
         {pokemonS.map((pokemon: Pokemon) => (
           <Card key={pokemon.id} pokemon={pokemon} />
         ))}

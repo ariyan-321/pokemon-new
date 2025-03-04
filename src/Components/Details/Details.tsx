@@ -102,10 +102,11 @@ export default function Details() {
         <h1 className="text-[#257BC4] font-semibold  text-lg sm:text-xl lg:order-1">
           {pokemon.name} <span>#00{pokemon.id}</span>
         </h1>
-        <p className="text-sm">
+        <p className="text-sm text-left md:px-5 md:pl-10">
         There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.
         </p>
 
+        <div className="flex justify-center items-center">
         <div className="border-[#FC7C23] border-4 h-[300px] rounded-lg w-full sm:w-[80%] rounded-br-[50px] grid grid-cols-2 gap-3 justify-items-center items-center">
           <div className="space-y-2 text-left">
             <p className="font-semibold ">Height</p>
@@ -121,12 +122,13 @@ export default function Details() {
           </div>
           <div className="space-y-2 text-left">
             <p className="font-semibold  ">Abilities</p>
-            <p>
+            <p className="flex flex-wrap">
   {pokemon.abilities.map((ability:Ability, index:number) => (
     <span key={ability.ability.name || index}>{ability.ability.name}</span>
   ))}
 </p>
           </div>
+        </div>
         </div>
       </div>
 
