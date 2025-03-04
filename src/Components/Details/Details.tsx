@@ -32,7 +32,7 @@ export default function Details() {
     grass: "bg-[#9BCC50]",
     poison: "bg-[#B97FC9]",
     fire: "bg-[#FC7C23]",
-    flying: "bg-[#30A7D7]",
+    flying: "bg-gradient-to-b from-sky-400 to-gray-500",
     water: "bg-[#30A7D7]",
     bug: "bg-[#729F3F]",
   };
@@ -48,6 +48,7 @@ export default function Details() {
   const allTypes = [
     
     "fire",
+    "flying",
     "water",
     "poison",
     "grass",
@@ -147,17 +148,29 @@ export default function Details() {
 
 <h1 className="font-semibold text-lg text-left py-4">Weaknesses</h1>
 <div className="flex flex-wrap gap-3 justify-start mt-2">
-  {allTypes.slice(0,4).map((type: string, i: number) => (
+  {allTypes.slice(0, 4).map((type: string, i: number) => (
     <span
       key={i}
-      className={`rounded-lg px-4 text-white font-semibold py-1 ${
-        abilityColors[type] || "bg-gray-500" // Default color if not found
+      className={`relative rounded-lg px-4 text-white font-semibold py-1 overflow-hidden ${
+        abilityColors[type] || "bg-gray-500" 
       }`}
+      style={
+        type === "flying"
+          ? { background: "none" } 
+          : {}
+      }
     >
-      {type}
+      {type === "flying" && (
+        <>
+          <span className="absolute top-0 left-0 w-full h-1/2 bg-sky-400"></span>
+          <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gray-400"></span>
+        </>
+      )}
+      <span className="relative z-10">{type}</span> {/* Keep text above the background */}
     </span>
   ))}
 </div>
+
 
 
         <div className="w-full max-w-sm mx-auto mt-5">
