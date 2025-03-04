@@ -89,10 +89,12 @@ export default function Details() {
       </div>
       
       <div className="lg:grid grid-cols-3 justify-items-center lg:mt-24">
-      <div className="w-full max-w-xs sm:max-w-sm lg:order-2 ">
+      <div className="w-full flex flex-col justify-center items-center gap-7 max-w-xs sm:max-w-sm lg:order-2  ">
         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
                   pokemon?.id ?? 0
                 }.png`} alt={pokemon.name} className="w-full" />
+
+                <div className="bg-[#00000033] w-[283px] blur-lg h-[40px] rounded-tr-[600px] rounded-tl-[600px] rounded-bl-[600px] rounded-br-[600px]"></div>
       </div>
 
       <div className="w-full  mt-5">
