@@ -11,9 +11,9 @@ export default function Details() {
  
   interface Stat {
     stat: {
-      name: string;  // The name of the stat (e.g., "attack", "defense")
+      name: string;  
     };
-    base_stat: number;  // The base value for the stat
+    base_stat: number;  
   }
 
   interface Ability {
@@ -24,7 +24,7 @@ export default function Details() {
 
   interface PokemonType {
     type: {
-      name: string; // The name of the type, e.g., "fire", "water", etc.
+      name: string; 
     };
   }
 
@@ -85,7 +85,7 @@ export default function Details() {
         <img
           src="/images/Logo.png"
           alt="Pokemon Logo"
-          className="w-24 sm:w-32"
+          className="w-24 sm:w-[250px]"
         />
       </div>
       
@@ -120,9 +120,9 @@ export default function Details() {
             <p className="font-semibold ">Weight</p>
             <p>{pokemon.weight}</p>
           </div>
-          <div className="space-y-2 text-left">
+          <div className="space-y-2 ">
             <p className="font-semibold  ">Abilities</p>
-            <p className="flex flex-wrap">
+            <p className="flex flex-wrap gap-3 justify-center">
   {pokemon.abilities.map((ability:Ability, index:number) => (
     <span key={ability.ability.name || index}>{ability.ability.name}</span>
   ))}
