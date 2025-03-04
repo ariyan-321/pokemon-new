@@ -26,7 +26,7 @@ export default function Cards() {
   const pokemonS = data?.pokemons?.results || [];
 
   return (
-    <div className="w-[90%] md:w-full mx-auto">
+    <div className="w-[90%] md:w-full mx-auto  px-4">
       {/* Carousel for mobile */}
       <div className="carousel carousel-center rounded-box max-w-md space-x-4 p-4 md:hidden">
         {pokemonS.map((pokemon: Pokemon) => (

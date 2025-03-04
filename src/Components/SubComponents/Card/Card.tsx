@@ -45,10 +45,10 @@ const abilityColors: { [key: string]: string } = {
 const Card = ({ pokemon }: CardProps) => {
   return (
     <Link to={`/details/${pokemon.name}`}>
-    <div className="relative cursor-pointer rounded-br-[100px] bg-white rounded-lg shadow-lg p-6 w-64 min-w-[256px] transition-transform hover:scale-105">
+    <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 76%, 76% 100%, 0 100%, 0% 50%)" }} className="relative cursor-pointer  bg-white rounded-lg shadow-lg p-2 w-64 min-w-[256px] transition-transform hover:scale-105">
       {/* Pokemon Image */}
       <div className="w-full h-40 bg-gray-100 rounded-xl p-4 mb-6">
-        <span className="absolute top-4 left-4 text-gray-600 p-5 text-sm font-bold">
+        <span className="absolute top-1 left-1 text-gray-600 p-5 text-sm font-bold">
           #010
         </span>
 
@@ -58,12 +58,12 @@ const Card = ({ pokemon }: CardProps) => {
           className="w-full h-full object-contain"
         />
       </div>
-      <h3 className="text-center text-2xl font-bold mt-8 mb-4 capitalize">
+      <h3 className="text-left text-2xl font-bold mt-8 px-4 py-2 capitalize">
         {pokemon.name}
       </h3>
 
       {/* Abilities Container */}
-      <div className="flex flex-wrap gap-3 justify-center ">
+      <div className="flex flex-wrap gap-3 justify-start px-4 py-2 ">
       {Array.isArray(allTypes) &&
     allTypes.slice(0, 2).map((ability: string, i: number) => (
       <span
